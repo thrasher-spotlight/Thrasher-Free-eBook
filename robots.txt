@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thrasher-spotlight.github.io/Thrasher-Free-eBook/sitemap.xml
