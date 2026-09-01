@@ -11,8 +11,6 @@ h1{margin-top:0} p{line-height:1.5}
 label{display:block;font-weight:700;margin:18px 0 7px}
 input{box-sizing:border-box;width:100%;padding:13px;border:1px solid #bbb;border-radius:7px;font-size:16px}
 button{margin-top:22px;width:100%;padding:14px;border:0;border-radius:7px;font-size:17px;font-weight:700;cursor:pointer}
-#download{display:none;margin-top:24px;padding:18px;background:#eef7ee;border-radius:8px}
-#download a{display:inline-block;margin-top:10px;font-weight:700}
 .error{color:#a40000;margin-top:10px}
 .small{font-size:13px;color:#555}
 </style>
@@ -34,12 +32,6 @@ Two practical ways to get noticed, build trust and stay top-of-mind.</p>
 <div id="error" class="error" role="alert"></div>
 </form>
 
-<section id="download" aria-live="polite">
-<strong>Thank you!</strong>
-<p>Your information has been submitted. Your eBook is ready.</p>
-<a href="free-ebook-attain-retain-customers.pdf" target="_blank" rel="noopener">Open the Attain &amp; Retain Customers eBook</a>
-</section>
-
 <p class="small">Your information will be used to respond to this request. You can unsubscribe from future messages.</p>
 <p class="small">Rob Thrasher | Spotlight on Success</p>
 </main>
@@ -55,8 +47,7 @@ document.getElementById('signup').addEventListener('submit', function(e){
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
     error.textContent='Please enter a valid email address.';return;
   }
-  this.style.display='none';
-  document.getElementById('download').style.display='block';
+  window.location.href='thank-you.html';
 });
 </script>
 </body>
