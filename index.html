@@ -1,1 +1,74 @@
- `<!doctype html><html><body><h1>Get the Free eBook</h1><form id="signup"><input id="name" name="name" placeholder="First Name" required><input id="email" name="email" type="email" placeholder="Email Address" required><button type="submit">GET MY FREE eBOOK</button></form><p id="msg"></p><script>document.getElementById('signup').addEventListener('submit',async e=>{e.preventDefault();const name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),msg=document.getElementById('msg');const r=await fetch('PASTE-WORKER-URL-HERE',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:name,email})});const d=await r.json();if(d.success)location.href='thank-you.html';else msg.textContent=d.message||'Something went wrong.';});</script></body></html>`
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get the Free eBook | Attain & Retain Customers</title>
+</head>
+
+<body>
+  <h1>Get the Free eBook</h1>
+
+  <form id="signup">
+    <input
+      id="name"
+      name="name"
+      placeholder="First Name"
+      required
+    >
+
+    <input
+      id="email"
+      name="email"
+      type="email"
+      placeholder="Email Address"
+      required
+    >
+
+    <button type="submit">GET MY FREE eBOOK</button>
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    document.getElementById("signup").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const msg = document.getElementById("msg");
+
+      msg.textContent = "Submitting...";
+
+      try {
+        const response = await fetch(
+          "https://ebook-intake-handler.thrasher-spotlight.workers.dev/",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              first_name: name,
+              email: email
+            })
+          }
+        );
+
+        const data = await response.json();
+
+        if (data.success) {
+          window.location.href = "thank-you.html";
+        } else {
+          msg.textContent =
+            data.message || "Something went wrong. Please try again.";
+        }
+
+      } catch (error) {
+        msg.textContent =
+          "There was a problem submitting the form. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html>
