@@ -1,0 +1,12 @@
+:root{--navy:#14202b;--red:#b32025;--cream:#f7f3ee;--white:#fff;--muted:#66717c}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:var(--cream)}
+.wrap{max-width:1080px;margin:auto;padding:28px 22px}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:14px}.tag{color:var(--red)}
+.hero{padding:65px 0 45px;text-align:center}.eyebrow{color:var(--red);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(42px,7vw,76px);line-height:.98;margin:16px auto;max-width:900px}
+.lead{font-size:20px;line-height:1.6;color:var(--muted);max-width:720px;margin:0 auto}
+.card{background:white;border-radius:22px;padding:40px;box-shadow:0 16px 45px rgba(20,32,43,.10);margin:20px 0 50px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.item{padding:25px;background:#f4f6f7;border-radius:15px}.item b{display:block;margin-bottom:9px}.item p{color:var(--muted);line-height:1.55;margin:0}
+h2{font-size:34px;margin-top:0}.quote{font-size:23px;line-height:1.5;text-align:center;max-width:780px;margin:0 auto}
+.signup{max-width:560px;margin:0 auto}.signup label{display:block;font-weight:700;margin:0 0 7px}.signup input{width:100%;padding:15px 16px;border:1px solid #ccd2d7;border-radius:9px;font-size:17px;margin-bottom:18px}.signup button{width:100%;padding:17px 20px;border:0;border-radius:9px;background:var(--red);color:#fff;font-size:17px;font-weight:800;cursor:pointer}.signup button:disabled{opacity:.65;cursor:wait}.small{font-size:13px;color:var(--muted);text-align:center;margin-top:12px}.error{color:var(--red);text-align:center;margin-top:12px;display:none}
+footer{border-top:1px solid #ddd;padding:30px 0;color:var(--muted);font-size:14px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding-top:45px}.card{padding:27px}}
